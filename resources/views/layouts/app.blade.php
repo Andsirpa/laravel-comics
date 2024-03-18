@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> {{ env('APP-NAME') }} - @yield('page-title')</title>
+    <title> Laravel Comics - @yield('page-title')</title>
 
     @vite('resources/js/app.js')
 
@@ -11,7 +11,18 @@
 </head>
 
 <body>
-    <header>Header</header>
+    <header>
+        <div class="container">
+            <div class="logo"></div>
+            <nav class="links">
+                <ul>
+                    <li><a href="{{ route('homepage') }}">Homepage</a></li>
+                    <li><a href="{{ route('comics') }}">Comics</a></li>
+                </ul>
+            </nav>
+            <div class="searchbar"></div>
+        </div>
+    </header>
     <main>
         @yield('main-content')
     </main>
