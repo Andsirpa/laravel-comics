@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Laravel Comics - @yield('page-title')</title>
+    {{-- recupero il nome del progetto dal file env --}}
+    <title> {{ env('APP_NAME') }} - @yield('page-title')</title>
 
     @vite('resources/js/app.js')
 
@@ -11,23 +13,18 @@
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <div class="logo"></div>
-            <nav class="links">
-                <ul>
-                    <li><a href="{{ route('homepage') }}">Homepage</a></li>
-                    <li><a href="{{ route('comics') }}">Comics</a></li>
-                </ul>
-            </nav>
-            <div class="searchbar"></div>
-        </div>
-    </header>
+    <!-- includo il file header -->
+    @include('partials.header')
+
     <main>
+        {{-- segnaposto per il main --}}
         @yield('main-content')
     </main>
-    <footer>Footer</footer>
+
+    <!-- includo il file footer -->
+    @include('partials.footer')
 
     @yield('js')
 </body>
+
 </html>

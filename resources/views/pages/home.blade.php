@@ -2,7 +2,7 @@
 
 @section('page-title', 'Homepage')
 
-@section('Main-content')
+@section('main-content')
     <div class="container">
         <h1>Homepage</h1>
     </div>
