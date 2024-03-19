@@ -21,5 +21,8 @@ Route::get('/', function () {
 
 
 Route::get('/comics', function () {
-  return view('pages.comics');
+  $comics = config('comics');
+  // uso il dump and die per verificare che l'array arrivi correttamente dd($comics);
+
+  return view('pages.comics', compact('comics'));
 })->name('comics');

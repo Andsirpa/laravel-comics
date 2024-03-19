@@ -19,3 +19,10 @@ li:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+// stile delle thumb
+.comic-thumb {
+    width: 100%;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+}
