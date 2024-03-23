@@ -18,14 +18,6 @@ use App\Http\Controllers\PageController;
 
 
 // do il nome alle rotte per poterle utilizzare tramite url
-Route::get('/', function () {
-  return view('pages.home');
-})->name('homepage');
-
-
-Route::get('/comics', function () {
-  $comics = config('comics');
-  // uso il dump and die per verificare che l'array arrivi correttamente dd($comics);
-
-  return view('pages.comics', compact('comics'));
-})->name('comics');
+// qui tengo solo la lista delle rotte
+Route::get('/', [PageController::class, 'index'])->name('homepage');
+Route::get('/comics', [PageController::class, 'comics'])->name('comics');
