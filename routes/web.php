@@ -21,3 +21,4 @@ use App\Http\Controllers\PageController;
 // qui tengo solo la lista delle rotte
 Route::get('/', [PageController::class, 'index'])->name('homepage');
 Route::get('/comics', [PageController::class, 'comics'])->name('comics');
+Route::get('/comic-detail/{index}', [PageController::class, 'comicDetail'])->name('comic-detail');

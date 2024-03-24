@@ -17,4 +17,13 @@ class PageController extends Controller
         $comics = config('comics');
         return view('pages.comics', compact('comics'));
     }
+
+    // metodo per il detail
+    // passo l'index come parametro
+    public function comicDetail($index)
+    {
+        $comics = config('comics');
+        $comic = $comics[$index];
+        return view('pages.comics-detail', compact('comic'));
+    }
 }
