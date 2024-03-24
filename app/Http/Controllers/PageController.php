@@ -23,6 +23,12 @@ class PageController extends Controller
     public function comicDetail($index)
     {
         $comics = config('comics');
+
+        // gestisco l'errore quando cerco una chiave non presente nell'array
+        if (!array_key_exists($index, $comics))
+            abort(404);
+
+
         $comic = $comics[$index];
         return view('pages.comics-detail', compact('comic'));
     }
